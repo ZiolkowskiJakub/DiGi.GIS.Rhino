@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net48</TargetFramework>
+	<LangVersion>8.0</LangVersion>
+	<OutputPath>..\bin\</OutputPath>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	<TargetExt>.gha</TargetExt>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="7.13.21348.13001" IncludeAssets="compile;build" />
+	  <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DiGi.GIS\DiGi.GIS\DiGi.GIS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DiGi.Core">
+      <HintPath>..\references\DiGi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DiGi.Core.IO">
+      <HintPath>..\references\DiGi.Core.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="DiGi.Core.Relation">
+      <HintPath>..\references\DiGi.Core.Relation.dll</HintPath>
+    </Reference>
+    <Reference Include="DiGi.Rhino.Core">
+      <HintPath>..\references\DiGi.Rhino.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
