@@ -2,7 +2,7 @@
 using DiGi.GIS.Rhino.Classes;
 using DiGi.Rhino.Core.Classes;
 using Grasshopper.Kernel.Types;
-using System.Collections.Generic;
+using System.Collections;
 
 namespace DiGi.GIS.Rhino
 {
@@ -20,7 +20,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Building2Ds", "Building2Ds", "GISModel Building2Ds")]
-        public static List<GooBuilding2D> Building2Ds(this GIS.Classes.GISModel gISModel)
+        public static IEnumerable Building2Ds(this GIS.Classes.GISModel gISModel)
         {
             if (gISModel == null)
             {
@@ -30,15 +30,15 @@ namespace DiGi.GIS.Rhino
             return gISModel.GetObjects<Building2D>()?.ConvertAll(x => new GooBuilding2D(x));
         }
 
-        //[Inspect("Test", "Test", "GISModel Test")]
-        //public static List<GH_String> Test(this GIS.Classes.GISModel gISModel)
-        //{
-        //    if (gISModel == null)
-        //    {
-        //        return null;
-        //    }
+        [Inspect("AdministrativeAreal2Ds", "AdministrativeAreal2Ds", "GISModel AdministrativeAreal2Ds")]
+        public static IEnumerable AdministrativeAreal2Ds(this GIS.Classes.GISModel gISModel)
+        {
+            if (gISModel == null)
+            {
+                return null;
+            }
 
-        //    return new List<GH_String> { new GH_String("AAA"), new GH_String("BBBS") };
-        //}
+            return gISModel.GetObjects<AdministrativeAreal2D>()?.ConvertAll(x => new GooAdministrativeAreal2D(x));
+        }
     }
 }

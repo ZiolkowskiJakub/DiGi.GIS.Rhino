@@ -29,8 +29,14 @@
     <Reference Include="DiGi.Core.Relation">
       <HintPath>..\references\DiGi.Core.Relation.dll</HintPath>
     </Reference>
+    <Reference Include="DiGi.Geometry">
+      <HintPath>..\references\DiGi.Geometry.dll</HintPath>
+    </Reference>
     <Reference Include="DiGi.Rhino.Core">
       <HintPath>..\references\DiGi.Rhino.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DiGi.Rhino.Geometry">
+      <HintPath>..\references\DiGi.Rhino.Geometry.dll</HintPath>
     </Reference>
   </ItemGroup>
 
