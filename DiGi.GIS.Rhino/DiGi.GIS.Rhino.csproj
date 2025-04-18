@@ -10,9 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grasshopper" Version="7.13.21348.13001" IncludeAssets="compile;build" />
+    <PackageReference Include="Grasshopper" Version="8.18.25100.11001" IncludeAssets="compile;build" />
 	  <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,22 +21,22 @@
 
   <ItemGroup>
     <Reference Include="DiGi.Core">
-      <HintPath>..\references\DiGi.Core.dll</HintPath>
+      <HintPath>..\..\DiGi.Core\bin\DiGi.Core.dll</HintPath>
     </Reference>
     <Reference Include="DiGi.Core.IO">
-      <HintPath>..\references\DiGi.Core.IO.dll</HintPath>
+      <HintPath>..\..\DiGi.Core\bin\DiGi.Core.IO.dll</HintPath>
     </Reference>
     <Reference Include="DiGi.Core.Relation">
-      <HintPath>..\references\DiGi.Core.Relation.dll</HintPath>
+      <HintPath>..\..\DiGi.Core\bin\DiGi.Core.Relation.dll</HintPath>
     </Reference>
     <Reference Include="DiGi.Geometry">
-      <HintPath>..\references\DiGi.Geometry.dll</HintPath>
+      <HintPath>..\..\DiGi.Geometry\bin\DiGi.Geometry.dll</HintPath>
     </Reference>
     <Reference Include="DiGi.Rhino.Core">
-      <HintPath>..\references\DiGi.Rhino.Core.dll</HintPath>
+      <HintPath>..\..\DiGi.Rhino\bin\DiGi.Rhino.Core.dll</HintPath>
     </Reference>
     <Reference Include="DiGi.Rhino.Geometry">
-      <HintPath>..\references\DiGi.Rhino.Geometry.dll</HintPath>
+      <HintPath>..\..\DiGi.Rhino\bin\DiGi.Rhino.Geometry.dll</HintPath>
     </Reference>
   </ItemGroup>
 
