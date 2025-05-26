@@ -1,5 +1,4 @@
 ﻿using DiGi.GIS.Classes;
-using DiGi.GIS.Enums;
 using DiGi.Rhino.Core.Classes;
 using Grasshopper.Kernel.Types;
 

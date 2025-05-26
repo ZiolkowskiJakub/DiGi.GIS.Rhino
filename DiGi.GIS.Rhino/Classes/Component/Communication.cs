@@ -1,10 +1,8 @@
-﻿using DiGi.Core.Classes;
-using DiGi.Geometry.Planar;
+﻿using DiGi.Geometry.Planar;
 using DiGi.Geometry.Planar.Classes;
 using DiGi.Geometry.Planar.Interfaces;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
-using DiGi.Rhino.Geometry;
 using DiGi.Rhino.Geometry.Classes;
 using Grasshopper.Kernel;
 using System;

@@ -5,7 +5,6 @@ using DiGi.Rhino.Core.Enums;
 using DiGi.Rhino.Geometry.Classes;
 using Grasshopper.Kernel;
 using Grasshopper.Kernel.Parameters;
-using Grasshopper.Kernel.Types;
 using System;
 using System.Collections.Generic;
 
