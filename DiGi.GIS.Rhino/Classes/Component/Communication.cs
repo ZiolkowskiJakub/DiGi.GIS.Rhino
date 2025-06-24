@@ -3,7 +3,7 @@ using DiGi.Geometry.Planar.Classes;
 using DiGi.Geometry.Planar.Interfaces;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
-using DiGi.Rhino.Geometry.Classes;
+using DiGi.Rhino.Geometry.Planar.Classes;
 using Grasshopper.Kernel;
 using System;
 using System.Collections.Generic;

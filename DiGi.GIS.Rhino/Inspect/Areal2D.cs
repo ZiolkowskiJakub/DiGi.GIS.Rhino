@@ -1,6 +1,6 @@
 ﻿using DiGi.GIS.Classes;
 using DiGi.Rhino.Core.Classes;
-using DiGi.Rhino.Geometry.Classes;
+using DiGi.Rhino.Geometry.Planar.Classes;
 using Grasshopper.Kernel.Types;
 
 namespace DiGi.GIS.Rhino
