@@ -2,7 +2,6 @@
 
   <PropertyGroup>
 	<TargetFramework>net8.0-windows</TargetFramework>
-	<Version>1.0</Version>
 	<LangVersion>8.0</LangVersion>
 	<OutputPath>..\bin\</OutputPath>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
