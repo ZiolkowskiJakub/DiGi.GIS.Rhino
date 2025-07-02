@@ -1,10 +1,12 @@
-﻿using DiGi.Rhino.Core.Classes;
+﻿using DiGi.Geometry.Core.Interfaces;
+using DiGi.Geometry.Planar.Classes;
+using DiGi.Rhino.Geometry.Core.Classes;
 using Grasshopper.Kernel.Types;
 using System;
 
 namespace DiGi.GIS.Rhino.Classes
 {
-    public class GooBuilding2D : GooSerializableObject<GIS.Classes.Building2D>
+    public class GooBuilding2D : GooBakeAwareSerializableObject<GIS.Classes.Building2D>
     {
         public GooBuilding2D()
             : base()
@@ -17,10 +19,18 @@ namespace DiGi.GIS.Rhino.Classes
 
         }
 
-        public GooBuilding2D(GooBuilding2D gooBuilding2D)
-            : base(gooBuilding2D)
+        public override IGeometry[] Geometries
         {
+            get
+            {
+                PolygonalFace2D polygonalFace2D = Value?.PolygonalFace2D;
+                if (polygonalFace2D == null)
+                {
+                    return null;
+                }
 
+                return [polygonalFace2D];
+            }
         }
 
         public override IGH_Goo Duplicate()
@@ -30,15 +40,15 @@ namespace DiGi.GIS.Rhino.Classes
 
     }
 
-    public class GooBuilding2DParam : GooPresistentParam<GooBuilding2D, GIS.Classes.Building2D>
+    public class GooBuilding2DParam : GooBakeAwareSerializableParam<GooBuilding2D, GIS.Classes.Building2D>
     {
-        public override Guid ComponentGuid => new Guid("ea3e3743-a880-4e8b-af02-4c0b054d0ef2");
-
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public GooBuilding2DParam()
             : base()
         {
         }
+
+        public override Guid ComponentGuid => new Guid("0f93b620-2aaa-43a2-a923-481bb6ad7adf");
+
+        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
     }
 }

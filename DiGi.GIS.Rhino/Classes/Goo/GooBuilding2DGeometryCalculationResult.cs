@@ -14,13 +14,6 @@ namespace DiGi.GIS.Rhino.Classes
         public GooBuilding2DGeometryCalculationResult(GIS.Classes.Building2DGeometryCalculationResult building2DGeometryCalculationResult)
             : base(building2DGeometryCalculationResult)
         {
-
-        }
-
-        public GooBuilding2DGeometryCalculationResult(GooBuilding2DGeometryCalculationResult gooBuilding2DGeometryCalculationResult)
-            : base(gooBuilding2DGeometryCalculationResult)
-        {
-
         }
 
         public override IGH_Goo Duplicate()
@@ -32,7 +25,7 @@ namespace DiGi.GIS.Rhino.Classes
 
     public class GooBuilding2DGeometryCalculationResultParam : GooPresistentParam<GooBuilding2DGeometryCalculationResult, GIS.Classes.Building2DGeometryCalculationResult>
     {
-        public override Guid ComponentGuid => new Guid("fdf2900e-a374-4c69-b3ec-9601ae63e829");
+        public override Guid ComponentGuid => new Guid("cdd5d5f9-dfb6-46ad-9a6d-6a7248303f02");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

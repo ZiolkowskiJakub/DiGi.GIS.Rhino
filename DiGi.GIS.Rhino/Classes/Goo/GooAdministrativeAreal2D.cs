@@ -17,12 +17,6 @@ namespace DiGi.GIS.Rhino.Classes
 
         }
 
-        public GooAdministrativeAreal2D(GooAdministrativeAreal2D gooAdministrativeAreal2D)
-            : base(gooAdministrativeAreal2D)
-        {
-
-        }
-
         public override IGH_Goo Duplicate()
         {
             return new GooAdministrativeAreal2D(Value);
@@ -32,7 +26,7 @@ namespace DiGi.GIS.Rhino.Classes
 
     public class GooAdministrativeAreal2DParam : GooPresistentParam<GooAdministrativeAreal2D, GIS.Classes.AdministrativeAreal2D>
     {
-        public override Guid ComponentGuid => new Guid("eaccaeae-956d-48e8-8485-280a55ae9c6e");
+        public override Guid ComponentGuid => new Guid("23c47f22-426a-4407-8d11-306ceedc0bea");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

@@ -2,11 +2,11 @@
 using System;
 using System.Drawing;
 
-namespace DiGi.GIS.Rhino.Classes
+namespace DiGi.GIS.Analytical.Rhino.Classes
 {
     public class RhinoInfo : GH_AssemblyInfo
     {
-        public override string Name => "DiGi.GIS.Rhino";
+        public override string Name => "DiGi.GIS.Analytical.Rhino";
 
         //Return a 24x24 pixel bitmap to represent this GHA library.
         public override Bitmap Icon => null;
@@ -14,7 +14,7 @@ namespace DiGi.GIS.Rhino.Classes
         //Return a short string describing the purpose of this GHA library.
         public override string Description => "";
 
-        public override Guid Id => new Guid("5f962e9f-3dde-4ee9-94fb-2d9339ece48c");
+        public override Guid Id => new Guid("c89f4c64-b274-4395-9feb-532701db5f22");
 
         //Return a string identifying you or your company.
         public override string AuthorName => "Jakub Ziolkowski";

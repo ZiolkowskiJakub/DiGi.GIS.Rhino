@@ -45,7 +45,13 @@ namespace DiGi.GIS.Rhino.Classes
                 result.Add(new Param(new GooGISModelParam() { Name = "GISModel", NickName = "GISModel", Description = "DiGi GIS GISModel", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
                 result.Add(new Param(new GooPoint2DParam() { Name = "Point2D", NickName = "Point2D", Description = "DiGi Geometry Point2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
 
-                Param_Number param_Number = new Param_Number() { Name = "Tolerance", NickName = "Tolerance", Description = "Tolerance", Access = GH_ParamAccess.item, Optional = true };
+                Param_Number param_Number = null;
+
+                param_Number = new Param_Number() { Name = "Distance", NickName = "Distance", Description = "Distance", Access = GH_ParamAccess.item, Optional = true };
+                param_Number.SetPersistentData(0);
+                result.Add(new Param(param_Number, ParameterVisibility.Voluntary));
+
+                param_Number = new Param_Number() { Name = "Tolerance", NickName = "Tolerance", Description = "Tolerance", Access = GH_ParamAccess.item, Optional = true };
                 param_Number.SetPersistentData(Core.Constans.Tolerance.Distance);
                 result.Add(new Param(param_Number, ParameterVisibility.Voluntary));
                 
@@ -100,7 +106,14 @@ namespace DiGi.GIS.Rhino.Classes
                 dataAccess.GetData(index, ref tolerance);
             }
 
-            List<Building2D> building2Ds = Query.Building2Ds(gISModel, point2D, out List<AdministrativeAreal2D> administrativeAreal2Ds, tolerance);
+            index = Params.IndexOfInputParam("Distance");
+            double distance = 0;
+            if (index != -1)
+            {
+                dataAccess.GetData(index, ref distance);
+            }
+
+            List<Building2D> building2Ds = Query.Building2Ds(gISModel, point2D, out List<AdministrativeAreal2D> administrativeAreal2Ds, distance, tolerance);
 
             index = Params.IndexOfOutputParam("Building2Ds");
             if (index != -1)
