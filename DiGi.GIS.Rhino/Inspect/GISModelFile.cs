@@ -7,7 +7,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("GISModel", "GISModel", "GISModel")]
-        public static GooGISModel GISModel(this GIS.Classes.GISModelFile gISModelFile)
+        public static GooGISModel? GISModel(this GIS.Classes.GISModelFile? gISModelFile)
         {
             if (gISModelFile == null)
             {
@@ -20,7 +20,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Path", "Path", "Path")]
-        public static GH_String Path(this GIS.Classes.GISModelFile gISModelFile)
+        public static GH_String? Path(this GIS.Classes.GISModelFile? gISModelFile)
         {
             if (gISModelFile == null)
             {

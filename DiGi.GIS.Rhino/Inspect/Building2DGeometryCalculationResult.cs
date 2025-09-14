@@ -8,7 +8,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Area", "Area", "Building2D Area")]
-        public static GH_Number Area(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? Area(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -19,7 +19,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Rectangularity", "Rectangularity", "Building2D Rectangularity")]
-        public static GH_Number Rectangularity(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? Rectangularity(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -30,7 +30,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("RectangularThinnessRatio", "RectangularThinnessRatio", "Building2D Rectangular Thinness Ratio")]
-        public static GH_Number RectangularThinnessRatio(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? RectangularThinnessRatio(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -41,7 +41,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("InternalPoint", "InternalPoint", "Building2D Rectangular Internal Point")]
-        public static GooPoint2D InternalPoint(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GooPoint2D? InternalPoint(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -52,7 +52,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Centroid", "Centroid", "Building2D Centroid")]
-        public static GooPoint2D Centroid(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GooPoint2D? Centroid(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -63,7 +63,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("ThinnessRatio", "ThinnessRatio", "Building2D ThinnessRatio")]
-        public static GH_Number ThinnessRatio(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? ThinnessRatio(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -74,7 +74,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Perimeter", "Perimeter", "Building2D Perimeter")]
-        public static GH_Number Perimeter(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? Perimeter(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {
@@ -85,7 +85,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("IsoperimetricRatio", "IsoperimetricRatio", "Building2D IsoperimetricRatio")]
-        public static GH_Number IsoperimetricRatio(this Building2DGeometryCalculationResult building2DGeometryCalculationResult)
+        public static GH_Number? IsoperimetricRatio(this Building2DGeometryCalculationResult? building2DGeometryCalculationResult)
         {
             if (building2DGeometryCalculationResult == null)
             {

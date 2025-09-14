@@ -11,7 +11,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public GooGISModel(GIS.Classes.GISModel gISModel)
+        public GooGISModel(GIS.Classes.GISModel? gISModel)
         {
             Value = gISModel;
         }
@@ -21,30 +21,30 @@ namespace DiGi.GIS.Rhino.Classes
             return new GooGISModel(Value);
         }
 
-        public override bool CastFrom(object source)
+        public override bool CastFrom(object? source)
         {
             if (source == null)
             {
                 return false;
             }
 
-            if (source is GIS.Classes.GISModel)
+            if (source is GIS.Classes.GISModel gISModel)
             {
-                Value = (GIS.Classes.GISModel)source;
+                Value = gISModel;
                 return true;
             }
 
-            Type type_Source = source?.GetType();
+            Type? type_Source = source?.GetType();
             if (typeof(IGH_Goo).IsAssignableFrom(type_Source))
             {
-                object @object = (source as dynamic).Value;
-                if(@object is GIS.Classes.GISModel)
+                object @object = (source as dynamic)!.Value;
+                if(@object is GIS.Classes.GISModel gISModel_Temp)
                 {
-                    Value = (GIS.Classes.GISModel)@object;
+                    Value = gISModel_Temp;
                 }
-                else if (@object is GIS.Classes.GISModelFile)
+                else if (@object is GIS.Classes.GISModelFile gISModelFile)
                 {
-                    Value = ((GIS.Classes.GISModelFile)@object).Value;
+                    Value = gISModelFile.Value;
                 }
             }
 
@@ -55,13 +55,13 @@ namespace DiGi.GIS.Rhino.Classes
         {
             if (typeof(Y) == typeof(GIS.Classes.GISModel))
             {
-                target = (Y)(object)Value;
+                target = (Y)(object)Value!;
                 return true;
             }
 
             if (typeof(Y) == typeof(object))
             {
-                target = (Y)(object)Value;
+                target = (Y)(object)Value!;
                 return true;
             }
 
@@ -72,7 +72,7 @@ namespace DiGi.GIS.Rhino.Classes
 
     public class GooGISModelParam : GooPresistentParam<GooGISModel, GIS.Classes.GISModel>
     {
-        public override Guid ComponentGuid => new Guid("de24fde4-53dc-42df-8c0a-27cde1a3d1ed");
+        public override Guid ComponentGuid => new ("de24fde4-53dc-42df-8c0a-27cde1a3d1ed");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

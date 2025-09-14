@@ -9,12 +9,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override string Name => "DiGi.GIS.Rhino";
 
         //Return a 24x24 pixel bitmap to represent this GHA library.
-        public override Bitmap Icon => null;
+        public override Bitmap? Icon => null;
 
         //Return a short string describing the purpose of this GHA library.
         public override string Description => "";
 
-        public override Guid Id => new Guid("5f962e9f-3dde-4ee9-94fb-2d9339ece48c");
+        public override Guid Id => new ("5f962e9f-3dde-4ee9-94fb-2d9339ece48c");
 
         //Return a string identifying you or your company.
         public override string AuthorName => "Jakub Ziolkowski";

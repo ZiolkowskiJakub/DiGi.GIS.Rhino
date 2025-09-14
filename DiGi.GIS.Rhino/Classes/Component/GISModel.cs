@@ -12,7 +12,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new Guid("e315f51e-f6f8-4cfa-a7f6-ede4088f5480");
+        public override Guid ComponentGuid => new ("e315f51e-f6f8-4cfa-a7f6-ede4088f5480");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -38,9 +38,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new Grasshopper.Kernel.Parameters.Param_FilePath() { Name = "Path", NickName = "Path", Description = "File Path", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new Grasshopper.Kernel.Parameters.Param_FilePath() { Name = "Path", NickName = "Path", Description = "File Path", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -51,9 +53,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooGISModelParam() { Name = "GISModel", NickName = "GISModel", Description = "DiGi GIS GISModel", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooGISModelParam() { Name = "GISModel", NickName = "GISModel", Description = "DiGi GIS GISModel", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -68,7 +72,7 @@ namespace DiGi.GIS.Rhino.Classes
             int index;
 
             index = Params.IndexOfInputParam("Path");
-            string path = null;
+            string? path = null;
             if (index == -1 || !dataAccess.GetData(index, ref path) || path == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
@@ -83,8 +87,8 @@ namespace DiGi.GIS.Rhino.Classes
                 return;
             }
 
-            GIS.Classes.GISModel gISModel = null;
-            using (GIS.Classes.GISModelFile gISModelFile = new GIS.Classes.GISModelFile(path_Temp.Value))
+            GIS.Classes.GISModel? gISModel = null;
+            using (GIS.Classes.GISModelFile gISModelFile = new (path_Temp.Value))
             {
                 gISModelFile.Open();
                 gISModel = gISModelFile.Value;

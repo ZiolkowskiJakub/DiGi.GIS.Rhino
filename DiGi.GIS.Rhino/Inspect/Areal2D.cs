@@ -8,7 +8,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Guid", "Guid", "Guid")]
-        public static GH_Guid Guid(this Areal2D areal2D)
+        public static GH_Guid? Guid(this Areal2D? areal2D)
         {
             if (areal2D == null)
             {
@@ -19,7 +19,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Reference", "Reference", "Areal2D Reference")]
-        public static GH_String Reference(this Areal2D areal2D)
+        public static GH_String? Reference(this Areal2D? areal2D)
         {
             if (areal2D == null)
             {
@@ -30,7 +30,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("PolygonalFace2D", "PolygonalFace2D", "Areal2D PolygonalFace2D")]
-        public static GooPolygonalFace2D PolygonalFace2D(this Areal2D areal2D)
+        public static GooPolygonalFace2D? PolygonalFace2D(this Areal2D? areal2D)
         {
             if (areal2D == null)
             {

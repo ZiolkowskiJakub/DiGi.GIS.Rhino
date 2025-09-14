@@ -1,5 +1,4 @@
 ﻿using DiGi.Geometry.Planar.Classes;
-using DiGi.Geometry.Spatial.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using DiGi.Rhino.Geometry.Planar.Classes;
@@ -15,7 +14,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new Guid("a880614a-8dc9-4b46-a8d0-547eb36228b2");
+        public override Guid ComponentGuid => new ("a880614a-8dc9-4b46-a8d0-547eb36228b2");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -41,9 +40,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooPoint3DParam() { Name = "Point3D", NickName = "Point3D", Description = "EPSG4326 Point3D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooPoint3DParam() { Name = "Point3D", NickName = "Point3D", Description = "EPSG4326 Point3D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -54,9 +55,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooPoint2DParam() { Name = "Point2D", NickName = "Point2D", Description = "EPSG2180 Point2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooPoint2DParam() { Name = "Point2D", NickName = "Point2D", Description = "EPSG2180 Point2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -71,14 +74,14 @@ namespace DiGi.GIS.Rhino.Classes
             int index;
 
             index = Params.IndexOfInputParam("Point3D");
-            DiGi.Geometry.Spatial.Classes.Point3D point3D = null;
+            Geometry.Spatial.Classes.Point3D? point3D = null;
             if (index == -1 || !dataAccess.GetData(index, ref point3D) || point3D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
             }
 
-            Point2D point2D = Convert.ToEPSG2180(point3D);
+            Point2D? point2D = Convert.ToEPSG2180(point3D);
 
             index = Params.IndexOfOutputParam("Point2D");
             if (index != -1)

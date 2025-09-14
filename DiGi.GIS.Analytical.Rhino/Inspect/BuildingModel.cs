@@ -6,7 +6,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("LOD", "LOD", "Level of Detail")]
-        public static GooEnum LOD(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
+        public static GooEnum? LOD(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
         {
             if (buildingModel == null)
             {
@@ -22,14 +22,14 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Reference", "Reference", "Reference")]
-        public static GH_String Guid(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
+        public static GH_String? Guid(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
         {
             if (buildingModel == null)
             {
                 return null;
             }
 
-            if (!buildingModel.TryGetValue(Analytical.Enums.BuildingModelParameter.Reference, out string result))
+            if (!buildingModel.TryGetValue(Analytical.Enums.BuildingModelParameter.Reference, out string? result))
             {
                 return null;
             }

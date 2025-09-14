@@ -14,7 +14,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new Guid("d5d5f31f-2760-4fe9-96d0-65a80d98c9f0");
+        public override Guid ComponentGuid => new ("d5d5f31f-2760-4fe9-96d0-65a80d98c9f0");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -40,9 +40,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooPoint2DParam() { Name = "Point2D", NickName = "Point2D", Description = "EPSG2180 Point2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooPoint2DParam() { Name = "Point2D", NickName = "Point2D", Description = "EPSG2180 Point2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -53,9 +55,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooPoint3DParam() { Name = "Point3D", NickName = "Point3D", Description = "EPSG2180 Point3D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooPoint3DParam() { Name = "Point3D", NickName = "Point3D", Description = "EPSG2180 Point3D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -70,14 +74,14 @@ namespace DiGi.GIS.Rhino.Classes
             int index;
 
             index = Params.IndexOfInputParam("Point2D");
-            Point2D point2D = null;
+            Point2D? point2D = null;
             if (index == -1 || !dataAccess.GetData(index, ref point2D) || point2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
             }
 
-            Geometry.Spatial.Classes.Point3D point3D = Convert.ToEPSG4326(point2D);
+            Geometry.Spatial.Classes.Point3D? point3D = Convert.ToEPSG4326(point2D);
 
             index = Params.IndexOfOutputParam("Point3D");
             if (index != -1)

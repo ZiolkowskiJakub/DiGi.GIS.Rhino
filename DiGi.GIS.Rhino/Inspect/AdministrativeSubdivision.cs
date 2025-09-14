@@ -8,7 +8,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Name", "Name", "AdministrativeSubdivision Name")]
-        public static GH_String Name(this AdministrativeSubdivision administrativeSubdivision)
+        public static GH_String? Name(this AdministrativeSubdivision? administrativeSubdivision)
         {
             if (administrativeSubdivision == null)
             {
@@ -19,7 +19,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Occupancy", "Occupancy", "AdministrativeSubdivision Occupancy")]
-        public static GH_Integer Occupancy(this AdministrativeSubdivision administrativeSubdivision)
+        public static GH_Integer? Occupancy(this AdministrativeSubdivision? administrativeSubdivision)
         {
             if (administrativeSubdivision == null || administrativeSubdivision.Occupancy == null)
             {
@@ -30,7 +30,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("AdministrativeSubdivisionType", "AdministrativeSubdivisionType", "AdministrativeSubdivision AdministrativeSubdivisionType")]
-        public static GooEnum<AdministrativeSubdivisionType> AdministrativeSubdivisionType(this AdministrativeSubdivision administrativeSubdivision)
+        public static GooEnum<AdministrativeSubdivisionType>? AdministrativeSubdivisionType(this AdministrativeSubdivision? administrativeSubdivision)
         {
             if (administrativeSubdivision == null)
             {

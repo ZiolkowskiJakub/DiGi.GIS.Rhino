@@ -10,7 +10,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Storeys", "Storeys", "Building2D Storeys")]
-        public static GH_Integer Storeys(this Building2D building2D)
+        public static GH_Integer? Storeys(this Building2D? building2D)
         {
             if (building2D == null)
             {
@@ -21,7 +21,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("BuildingGeneralFunction", "BuildingGeneralFunction", "BuildingGeneralFunction")]
-        public static GooEnum<BuildingGeneralFunction> BuildingGeneralFunction(this Building2D building2D)
+        public static GooEnum<BuildingGeneralFunction>? BuildingGeneralFunction(this Building2D? building2D)
         {
             if (building2D?.BuildingGeneralFunction == null)
             {
@@ -32,7 +32,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("BuildingSpecificFunctions", "BuildingSpecificFunctions", "BuildingSpecificFunctions")]
-        public static IEnumerable BuildingSpecificFunctions(this Building2D building2D)
+        public static IEnumerable? BuildingSpecificFunctions(this Building2D? building2D)
         {
             if (building2D?.BuildingSpecificFunctions == null)
             {
@@ -43,7 +43,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("BuildingPhase", "BuildingPhase", "BuildingPhase")]
-        public static GooEnum<BuildingPhase> BuildingPhase(this Building2D building2D)
+        public static GooEnum<BuildingPhase>? BuildingPhase(this Building2D? building2D)
         {
             if (building2D?.BuildingPhase == null)
             {
@@ -54,7 +54,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("IsOccupied", "IsOccupied", "Building2D Is Occupied")]
-        public static GH_Boolean IsOccupied(this Building2D building2D)
+        public static GH_Boolean? IsOccupied(this Building2D? building2D)
         {
             if (building2D == null)
             {

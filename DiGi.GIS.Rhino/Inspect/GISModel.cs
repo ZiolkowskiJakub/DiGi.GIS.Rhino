@@ -9,7 +9,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Guid", "Guid", "Guid")]
-        public static GH_Guid Guid(this GIS.Classes.GISModel gISModel)
+        public static GH_Guid? Guid(this GIS.Classes.GISModel? gISModel)
         {
             if (gISModel == null)
             {
@@ -20,7 +20,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("Building2Ds", "Building2Ds", "GISModel Building2Ds")]
-        public static IEnumerable Building2Ds(this GIS.Classes.GISModel gISModel)
+        public static IEnumerable? Building2Ds(this GIS.Classes.GISModel? gISModel)
         {
             if (gISModel == null)
             {
@@ -31,7 +31,7 @@ namespace DiGi.GIS.Rhino
         }
 
         [Inspect("AdministrativeAreal2Ds", "AdministrativeAreal2Ds", "GISModel AdministrativeAreal2Ds")]
-        public static IEnumerable AdministrativeAreal2Ds(this GIS.Classes.GISModel gISModel)
+        public static IEnumerable? AdministrativeAreal2Ds(this GIS.Classes.GISModel? gISModel)
         {
             if (gISModel == null)
             {

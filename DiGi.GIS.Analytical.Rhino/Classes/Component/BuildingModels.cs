@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using DiGi.Analytical.Building.Rhino.Classes;
 using DiGi.GIS.Classes;
 using DiGi.Analytical.Building.Classes;
+using DiGi.Core;
 
 namespace DiGi.GIS.Rhino.Classes
 {
@@ -14,7 +15,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new Guid("f9120fc5-0589-4101-933d-3752b7bacde4");
+        public override Guid ComponentGuid => new ("f9120fc5-0589-4101-933d-3752b7bacde4");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -40,10 +41,12 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooGISModelFileParam() { Name = "GISModelFile", NickName = "GISModelFile", Description = "DiGi GIS GISModelFile", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                result.Add(new Param(new GooBuilding2DParam() { Name = "Building2Ds", NickName = "Building2Ds", Description = "DiGi GIS Building2Ds", Access = GH_ParamAccess.list, Optional = true }, ParameterVisibility.Voluntary));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooGISModelFileParam() { Name = "GISModelFile", NickName = "GISModelFile", Description = "DiGi GIS GISModelFile", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                    new Param(new GooBuilding2DParam() { Name = "Building2Ds", NickName = "Building2Ds", Description = "DiGi GIS Building2Ds", Access = GH_ParamAccess.list, Optional = true }, ParameterVisibility.Voluntary),
+                ];
+                return [.. result];
             }
         }
 
@@ -54,9 +57,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooBuildingModelParam() { Name = "BuildingModels", NickName = "BuildingModels", Description = "DiGi Analytical BuildingModels", Access = GH_ParamAccess.list }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooBuildingModelParam() { Name = "BuildingModels", NickName = "BuildingModels", Description = "DiGi Analytical BuildingModels", Access = GH_ParamAccess.list }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -71,18 +76,18 @@ namespace DiGi.GIS.Rhino.Classes
             int index;
 
             index = Params.IndexOfInputParam("GISModelFile");
-            GIS.Classes.GISModelFile gISModelFile = null;
+            GIS.Classes.GISModelFile? gISModelFile = null;
             if (index == -1 || !dataAccess.GetData(index, ref gISModelFile) || gISModelFile == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
             }
 
-            List<Building2D> building2Ds = null;
+            List<Building2D>? building2Ds = null;
             index = Params.IndexOfInputParam("Building2Ds");
             if(index != -1)
             {
-                building2Ds = new List<Building2D>();
+                building2Ds = [];
                 if(!dataAccess.GetDataList(index, building2Ds))
                 {
                     building2Ds = null;
@@ -95,9 +100,9 @@ namespace DiGi.GIS.Rhino.Classes
                 building2Ds = gISModelFile.Value?.GetObjects<Building2D>();
             }
 
-            Dictionary<string, BuildingModel> dictionary = Analytical.Query.BuildingModelDictionary(gISModelFile, building2Ds?.ConvertAll(x => x?.Reference));
+            Dictionary<string, BuildingModel>? dictionary = Analytical.Query.BuildingModelDictionary(gISModelFile, building2Ds?.ConvertAll(x => x?.Reference)!.FilterNulls());
 
-            List<BuildingModel> buildingModels = new List<BuildingModel>();
+            List<BuildingModel> buildingModels = [];
             if(dictionary != null)
             {
                 foreach (BuildingModel buildingModel in dictionary.Values)

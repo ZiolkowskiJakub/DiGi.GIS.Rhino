@@ -11,7 +11,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public GooGISModelFile(GIS.Classes.GISModelFile gISModelFile)
+        public GooGISModelFile(GIS.Classes.GISModelFile? gISModelFile)
         {
             Value = gISModelFile;
         }
@@ -25,7 +25,7 @@ namespace DiGi.GIS.Rhino.Classes
 
     public class GooGISModelFileParam : GooPresistentParam<GooGISModelFile, GIS.Classes.GISModelFile>
     {
-        public override Guid ComponentGuid => new Guid("f63fcf46-21bc-44a2-84f6-b24e63d9aeef");
+        public override Guid ComponentGuid => new ("f63fcf46-21bc-44a2-84f6-b24e63d9aeef");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

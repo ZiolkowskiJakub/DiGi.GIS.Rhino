@@ -12,7 +12,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new Guid("b8fdeab6-2bdb-4df1-9eb4-c6608774805e");
+        public override Guid ComponentGuid => new ("b8fdeab6-2bdb-4df1-9eb4-c6608774805e");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -38,10 +38,12 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooGISModelParam() { Name = "GISModel", NickName = "GISModel", Description = "DiGi GIS GISModel", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                result.Add(new Param(new GooBuilding2DParam() { Name = "Building2D", NickName = "Building2D", Description = "DiGi GIS Building2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooGISModelParam() { Name = "GISModel", NickName = "GISModel", Description = "DiGi GIS GISModel", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                    new Param(new GooBuilding2DParam() { Name = "Building2D", NickName = "Building2D", Description = "DiGi GIS Building2D", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -52,9 +54,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             get
             {
-                List<Param> result = new List<Param>();
-                result.Add(new Param(new GooBuilding2DGeometryCalculationResultParam() { Name = "Building2DGeometryCalculationResult", NickName = "Building2DGeometryCalculationResult", Description = "DiGi GIS Building2DGeometryCalculationResult", Access = GH_ParamAccess.item }, ParameterVisibility.Binding));
-                return result.ToArray();
+                List<Param> result =
+                [
+                    new Param(new GooBuilding2DGeometryCalculationResultParam() { Name = "Building2DGeometryCalculationResult", NickName = "Building2DGeometryCalculationResult", Description = "DiGi GIS Building2DGeometryCalculationResult", Access = GH_ParamAccess.item }, ParameterVisibility.Binding),
+                ];
+                return [.. result];
             }
         }
 
@@ -69,7 +73,7 @@ namespace DiGi.GIS.Rhino.Classes
             int index;
 
             index = Params.IndexOfInputParam("GISModel");
-            GIS.Classes.GISModel gISModel = null;
+            GIS.Classes.GISModel? gISModel = null;
             if (index == -1 || !dataAccess.GetData(index, ref gISModel) || gISModel == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
@@ -77,14 +81,14 @@ namespace DiGi.GIS.Rhino.Classes
             }
 
             index = Params.IndexOfInputParam("Building2D");
-            Building2D building2D = null;
+            Building2D? building2D = null;
             if (index == -1 || !dataAccess.GetData(index, ref building2D) || building2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
             }
 
-            GIS.Classes.Building2DGeometryCalculationResult building2DGeometryCalculationResult = gISModel.GetRelatedObject<GIS.Classes.Building2DGeometryCalculationResult>(building2D);
+            GIS.Classes.Building2DGeometryCalculationResult? building2DGeometryCalculationResult = gISModel.GetRelatedObject<GIS.Classes.Building2DGeometryCalculationResult>(building2D);
 
             index = Params.IndexOfOutputParam("Building2DGeometryCalculationResult");
             if (index != -1)

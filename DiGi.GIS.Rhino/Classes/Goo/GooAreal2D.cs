@@ -13,17 +13,17 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public GooAreal2D(GIS.Classes.Areal2D areal2D)
+        public GooAreal2D(GIS.Classes.Areal2D? areal2D)
             : base(areal2D)
         {
 
         }
 
-        public override IGeometry[] Geometries
+        public override IGeometry[]? Geometries
         {
             get
             {
-                PolygonalFace2D polygonalFace2D = Value?.PolygonalFace2D;
+                PolygonalFace2D? polygonalFace2D = Value?.PolygonalFace2D;
                 if(polygonalFace2D == null)
                 {
                     return null;
@@ -42,7 +42,7 @@ namespace DiGi.GIS.Rhino.Classes
 
     public class GooAreal2DParam : GooBakeAwareSerializableParam<GooAreal2D, GIS.Classes.Areal2D>
     {
-        public override Guid ComponentGuid => new Guid("a7c4576b-f722-40cb-b159-c5806ff5258f");
+        public override Guid ComponentGuid => new ("a7c4576b-f722-40cb-b159-c5806ff5258f");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

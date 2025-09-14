@@ -13,17 +13,17 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public GooBuilding2D(GIS.Classes.Building2D building2D)
+        public GooBuilding2D(GIS.Classes.Building2D? building2D)
             : base(building2D)
         {
 
         }
 
-        public override IGeometry[] Geometries
+        public override IGeometry[]? Geometries
         {
             get
             {
-                PolygonalFace2D polygonalFace2D = Value?.PolygonalFace2D;
+                PolygonalFace2D? polygonalFace2D = Value?.PolygonalFace2D;
                 if (polygonalFace2D == null)
                 {
                     return null;
@@ -47,7 +47,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public override Guid ComponentGuid => new Guid("0f93b620-2aaa-43a2-a923-481bb6ad7adf");
+        public override Guid ComponentGuid => new ("0f93b620-2aaa-43a2-a923-481bb6ad7adf");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
     }

@@ -7,7 +7,7 @@ namespace DiGi.GIS.Rhino
     public static partial class Inspect
     {
         [Inspect("Name", "Name", "AdministrativeAreal2D Name")]
-        public static GH_String Name(this AdministrativeAreal2D administrativeAreal2D)
+        public static GH_String? Name(this AdministrativeAreal2D? administrativeAreal2D)
         {
             if (administrativeAreal2D == null)
             {
