@@ -44,7 +44,7 @@
 		  <HintPath>..\..\DiGi.Analytical.Rhino\bin\DiGi.Analytical.Building.Rhino.dll</HintPath>
 		</Reference>
 		<Reference Include="DiGi.Core">
-			<HintPath>..\..\DiGi.Core\bin\DiGi.Core.dll</HintPath>
+		  <HintPath>..\..\DiGi.Core\bin\DiGi.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="DiGi.Core.IO">
 			<HintPath>..\..\DiGi.Core\bin\DiGi.Core.IO.dll</HintPath>
