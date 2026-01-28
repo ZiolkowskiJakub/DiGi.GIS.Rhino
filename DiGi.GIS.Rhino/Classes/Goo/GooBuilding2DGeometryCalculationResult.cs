@@ -20,12 +20,11 @@ namespace DiGi.GIS.Rhino.Classes
         {
             return new GooBuilding2DGeometryCalculationResult(Value);
         }
-
     }
 
     public class GooBuilding2DGeometryCalculationResultParam : GooPresistentParam<GooBuilding2DGeometryCalculationResult, GIS.Classes.Building2DGeometryCalculationResult>
     {
-        public override Guid ComponentGuid => new ("cdd5d5f9-dfb6-46ad-9a6d-6a7248303f02");
+        public override Guid ComponentGuid => new("cdd5d5f9-dfb6-46ad-9a6d-6a7248303f02");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

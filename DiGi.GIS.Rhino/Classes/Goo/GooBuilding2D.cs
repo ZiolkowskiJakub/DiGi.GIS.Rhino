@@ -16,7 +16,6 @@ namespace DiGi.GIS.Rhino.Classes
         public GooBuilding2D(GIS.Classes.Building2D? building2D)
             : base(building2D)
         {
-
         }
 
         public override IGeometry[]? Geometries
@@ -37,7 +36,6 @@ namespace DiGi.GIS.Rhino.Classes
         {
             return new GooBuilding2D(Value);
         }
-
     }
 
     public class GooBuilding2DParam : GooBakeAwareSerializableParam<GooBuilding2D, GIS.Classes.Building2D>
@@ -47,7 +45,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        public override Guid ComponentGuid => new ("0f93b620-2aaa-43a2-a923-481bb6ad7adf");
+        public override Guid ComponentGuid => new("0f93b620-2aaa-43a2-a923-481bb6ad7adf");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
     }

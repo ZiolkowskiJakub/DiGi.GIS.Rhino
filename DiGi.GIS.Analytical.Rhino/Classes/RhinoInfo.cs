@@ -14,7 +14,7 @@ namespace DiGi.GIS.Analytical.Rhino.Classes
         //Return a short string describing the purpose of this GHA library.
         public override string Description => "";
 
-        public override Guid Id => new ("c89f4c64-b274-4395-9feb-532701db5f22");
+        public override Guid Id => new("c89f4c64-b274-4395-9feb-532701db5f22");
 
         //Return a string identifying you or your company.
         public override string AuthorName => "Jakub Ziolkowski";

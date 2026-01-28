@@ -14,7 +14,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("a880614a-8dc9-4b46-a8d0-547eb36228b2");
+        public override Guid ComponentGuid => new("a880614a-8dc9-4b46-a8d0-547eb36228b2");
 
         /// <summary>
         /// Provides an Icon for the component.

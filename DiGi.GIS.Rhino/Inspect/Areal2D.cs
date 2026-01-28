@@ -39,6 +39,5 @@ namespace DiGi.GIS.Rhino
 
             return new GooPolygonalFace2D(areal2D.PolygonalFace2D);
         }
-
     }
 }

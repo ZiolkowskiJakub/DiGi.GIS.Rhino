@@ -12,7 +12,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("a2421efa-aec7-428b-80a5-8c4d428cd0d3");
+        public override Guid ComponentGuid => new("a2421efa-aec7-428b-80a5-8c4d428cd0d3");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -88,7 +88,7 @@ namespace DiGi.GIS.Rhino.Classes
                 return;
             }
 
-            if(!gISModel.TryGetRelatedObjects<Building2D, AdministrativeAreal2DBuilding2DsRelation>(administrativeAreal2D, out List<Building2D>? building2Ds))
+            if (!gISModel.TryGetRelatedObjects<Building2D, AdministrativeAreal2DBuilding2DsRelation>(administrativeAreal2D, out List<Building2D>? building2Ds))
             {
                 building2Ds = null;
             }

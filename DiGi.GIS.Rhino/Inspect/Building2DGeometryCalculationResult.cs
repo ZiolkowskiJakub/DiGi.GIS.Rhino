@@ -94,6 +94,5 @@ namespace DiGi.GIS.Rhino
 
             return new GH_Number(building2DGeometryCalculationResult.IsoperimetricRatio);
         }
-
     }
 }

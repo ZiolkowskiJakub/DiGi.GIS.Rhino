@@ -1,12 +1,12 @@
-﻿using DiGi.Rhino.Core.Classes;
+﻿using DiGi.Analytical.Building.Classes;
+using DiGi.Analytical.Building.Rhino.Classes;
+using DiGi.Core;
+using DiGi.GIS.Classes;
+using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using Grasshopper.Kernel;
 using System;
 using System.Collections.Generic;
-using DiGi.Analytical.Building.Rhino.Classes;
-using DiGi.GIS.Classes;
-using DiGi.Analytical.Building.Classes;
-using DiGi.Core;
 
 namespace DiGi.GIS.Rhino.Classes
 {
@@ -15,7 +15,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("f9120fc5-0589-4101-933d-3752b7bacde4");
+        public override Guid ComponentGuid => new("f9120fc5-0589-4101-933d-3752b7bacde4");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -85,16 +85,16 @@ namespace DiGi.GIS.Rhino.Classes
 
             List<Building2D>? building2Ds = null;
             index = Params.IndexOfInputParam("Building2Ds");
-            if(index != -1)
+            if (index != -1)
             {
                 building2Ds = [];
-                if(!dataAccess.GetDataList(index, building2Ds))
+                if (!dataAccess.GetDataList(index, building2Ds))
                 {
                     building2Ds = null;
                 }
             }
 
-            if(building2Ds == null)
+            if (building2Ds == null)
             {
                 gISModelFile.Open();
                 building2Ds = gISModelFile.Value?.GetObjects<Building2D>();
@@ -103,7 +103,7 @@ namespace DiGi.GIS.Rhino.Classes
             Dictionary<string, BuildingModel>? dictionary = Analytical.Query.BuildingModelDictionary(gISModelFile, building2Ds?.ConvertAll(x => x?.Reference)!.FilterNulls());
 
             List<BuildingModel> buildingModels = [];
-            if(dictionary != null)
+            if (dictionary != null)
             {
                 foreach (BuildingModel buildingModel in dictionary.Values)
                 {

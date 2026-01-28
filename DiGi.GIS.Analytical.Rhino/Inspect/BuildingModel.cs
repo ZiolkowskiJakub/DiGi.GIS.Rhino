@@ -13,7 +13,7 @@ namespace DiGi.GIS.Rhino
                 return null;
             }
 
-            if(!buildingModel.TryGetValue(Analytical.Enums.BuildingModelParameter.LOD, out Analytical.Enums.LOD lOD, new Core.Parameter.Classes.GetValueSettings(true, false)))
+            if (!buildingModel.TryGetValue(Analytical.Enums.BuildingModelParameter.LOD, out Analytical.Enums.LOD lOD, new Core.Parameter.Classes.GetValueSettings(true, false)))
             {
                 return null;
             }
@@ -38,5 +38,3 @@ namespace DiGi.GIS.Rhino
         }
     }
 }
-
-

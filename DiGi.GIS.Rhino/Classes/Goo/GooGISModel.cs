@@ -38,7 +38,7 @@ namespace DiGi.GIS.Rhino.Classes
             if (typeof(IGH_Goo).IsAssignableFrom(type_Source))
             {
                 object @object = (source as dynamic)!.Value;
-                if(@object is GIS.Classes.GISModel gISModel_Temp)
+                if (@object is GIS.Classes.GISModel gISModel_Temp)
                 {
                     Value = gISModel_Temp;
                 }
@@ -67,12 +67,11 @@ namespace DiGi.GIS.Rhino.Classes
 
             return base.CastTo(ref target);
         }
-
     }
 
     public class GooGISModelParam : GooPresistentParam<GooGISModel, GIS.Classes.GISModel>
     {
-        public override Guid ComponentGuid => new ("de24fde4-53dc-42df-8c0a-27cde1a3d1ed");
+        public override Guid ComponentGuid => new("de24fde4-53dc-42df-8c0a-27cde1a3d1ed");
 
         //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
 

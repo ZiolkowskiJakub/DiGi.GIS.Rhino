@@ -8,7 +8,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("f8f964b9-91b4-43d8-9630-186439d229bf");
+        public override Guid ComponentGuid => new("f8f964b9-91b4-43d8-9630-186439d229bf");
 
         /// <summary>
         /// Panel Type

@@ -12,7 +12,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("e315f51e-f6f8-4cfa-a7f6-ede4088f5480");
+        public override Guid ComponentGuid => new("e315f51e-f6f8-4cfa-a7f6-ede4088f5480");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -88,7 +88,7 @@ namespace DiGi.GIS.Rhino.Classes
             }
 
             GIS.Classes.GISModel? gISModel = null;
-            using (GIS.Classes.GISModelFile gISModelFile = new (path_Temp.Value))
+            using (GIS.Classes.GISModelFile gISModelFile = new(path_Temp.Value))
             {
                 gISModelFile.Open();
                 gISModel = gISModelFile.Value;

@@ -15,7 +15,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Gets the unique ID for this component. Do not change this ID after release.
         /// </summary>
-        public override Guid ComponentGuid => new ("1d64346f-8b7e-45f6-8e8f-ee3bcd765eaa");
+        public override Guid ComponentGuid => new("1d64346f-8b7e-45f6-8e8f-ee3bcd765eaa");
 
         /// <summary>
         /// Provides an Icon for the component.
@@ -53,7 +53,7 @@ namespace DiGi.GIS.Rhino.Classes
                 param_Number = new Param_Number() { Name = "Tolerance", NickName = "Tolerance", Description = "Tolerance", Access = GH_ParamAccess.item, Optional = true };
                 param_Number.SetPersistentData(Core.Constans.Tolerance.Distance);
                 result.Add(new Param(param_Number, ParameterVisibility.Voluntary));
-                
+
                 return [.. result];
             }
         }
