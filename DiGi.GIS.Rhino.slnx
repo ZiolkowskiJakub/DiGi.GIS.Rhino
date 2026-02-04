@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="../DiGi.GIS/DiGi.GIS/DiGi.GIS.csproj" />
+  <Project Path="DiGi.GIS.Analytical.Rhino/DiGi.GIS.Analytical.Rhino.csproj" />
+  <Project Path="DiGi.GIS.Rhino/DiGi.GIS.Rhino.csproj" />
+</Solution>
