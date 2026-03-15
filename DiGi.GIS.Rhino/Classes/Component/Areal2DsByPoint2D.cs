@@ -51,7 +51,7 @@ namespace DiGi.GIS.Rhino.Classes
                 result.Add(new Param(param_Number, ParameterVisibility.Voluntary));
 
                 param_Number = new Param_Number() { Name = "Tolerance", NickName = "Tolerance", Description = "Tolerance", Access = GH_ParamAccess.item, Optional = true };
-                param_Number.SetPersistentData(Core.Constans.Tolerance.Distance);
+                param_Number.SetPersistentData(Core.Constants.Tolerance.Distance);
                 result.Add(new Param(param_Number, ParameterVisibility.Voluntary));
 
                 return [.. result];
@@ -101,7 +101,7 @@ namespace DiGi.GIS.Rhino.Classes
             }
 
             index = Params.IndexOfInputParam("Tolerance");
-            double tolerance = Core.Constans.Tolerance.Distance;
+            double tolerance = Core.Constants.Tolerance.Distance;
             if (index != -1)
             {
                 dataAccess.GetData(index, ref tolerance);
