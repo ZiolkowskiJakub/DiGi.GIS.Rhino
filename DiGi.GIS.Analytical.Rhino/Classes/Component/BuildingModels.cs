@@ -10,6 +10,10 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// A Grasshopper component that loads building models from a GIS model file, 
+    /// optionally filtering by specific 2D building geometries.
+    /// </summary>
     public class BuildingModels : VariableParameterComponent
     {
         /// <summary>
@@ -18,14 +22,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("f9120fc5-0589-4101-933d-3752b7bacde4");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure level of the component, determining its execution priority.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="BuildingModels"/> class.
         /// </summary>
         public BuildingModels()
           : base("GIS.BuildingModels", "GIS.BuildingModels",
@@ -66,11 +68,10 @@ namespace DiGi.GIS.Rhino.Classes
         }
 
         /// <summary>
-        /// This is the method that actually does the work.
+        /// This is the method that actually does the work. It retrieves the GIS model file and 
+        /// optional building 2D data to generate a list of analytical building models.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;

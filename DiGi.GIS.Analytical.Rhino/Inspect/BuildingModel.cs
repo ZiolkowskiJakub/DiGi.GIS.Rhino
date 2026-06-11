@@ -5,6 +5,11 @@ namespace DiGi.GIS.Rhino
 {
     public static partial class Inspect
     {
+        /// <summary>
+        /// Retrieves the Level of Detail (LOD) for the specified building model.
+        /// </summary>
+        /// <param name="buildingModel">The building model to inspect.</param>
+        /// <returns>A <see cref="GooEnum"/> representing the LOD, or <c>null</c> if the value is not found or the building model is null.</returns>
         [Inspect("LOD", "LOD", "Level of Detail")]
         public static GooEnum? LOD(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
         {
@@ -21,6 +26,11 @@ namespace DiGi.GIS.Rhino
             return new GooEnum(lOD);
         }
 
+        /// <summary>
+        /// Retrieves the reference GUID for the specified building model.
+        /// </summary>
+        /// <param name="buildingModel">The building model to inspect.</param>
+        /// <returns>A <see cref="GH_String"/> containing the reference GUID, or <c>null</c> if the value is not found or the building model is null.</returns>
         [Inspect("Reference", "Reference", "Reference")]
         public static GH_String? Guid(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
         {

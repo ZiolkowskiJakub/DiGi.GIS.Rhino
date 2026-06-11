@@ -9,6 +9,9 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// A Grasshopper component that converts coordinates from the EPSG 2180 coordinate system to the EPSG 4326 coordinate system.
+    /// </summary>
     public class ToEPSG4326 : VariableParameterComponent
     {
         /// <summary>
@@ -17,14 +20,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("d5d5f31f-2760-4fe9-96d0-65a80d98c9f0");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure of the component, determining how it is executed in the Grasshopper canvas.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="ToEPSG4326"/> class.
         /// </summary>
         public ToEPSG4326()
           : base("GIS.ToEPSG4326", "GIS.ToEPSG4326",
@@ -64,11 +65,9 @@ namespace DiGi.GIS.Rhino.Classes
         }
 
         /// <summary>
-        /// This is the method that actually does the work.
+        /// This is the method that actually does the work of converting a point from EPSG 2180 to EPSG 4326.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object used to retrieve input data and store output results.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;

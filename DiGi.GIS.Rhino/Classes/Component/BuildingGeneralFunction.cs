@@ -3,6 +3,9 @@ using System;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// Represents the general function of a building within the GIS Rhino system.
+    /// </summary>
     public class BuildingGeneralFunction : EnumComponent<Enums.BuildingGeneralFunction>
     {
         /// <summary>
@@ -11,7 +14,7 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("f8f964b9-91b4-43d8-9630-186439d229bf");
 
         /// <summary>
-        /// Panel Type
+        /// Initializes a new instance of the <see cref="BuildingGeneralFunction"/> class.
         /// </summary>
         public BuildingGeneralFunction()
           : base("GIS")

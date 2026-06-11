@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// A Grasshopper component that retrieves the 2D geometry calculation result for a specific building within a GIS model.
+    /// </summary>
     public class Building2DGeometryCalculationResult : VariableParameterComponent
     {
         /// <summary>
@@ -15,14 +18,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("b8fdeab6-2bdb-4df1-9eb4-c6608774805e");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure level of the component, determining how it is displayed on the Grasshopper canvas.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="Building2DGeometryCalculationResult"/> class.
         /// </summary>
         public Building2DGeometryCalculationResult()
           : base("GIS.Building2DGeometryCalculationResult", "GIS.Building2DGeometryCalculationResult",
@@ -63,11 +64,10 @@ namespace DiGi.GIS.Rhino.Classes
         }
 
         /// <summary>
-        /// This is the method that actually does the work.
+        /// This is the method that actually does the work. It retrieves the GIS model and building, 
+        /// calculates the related geometry result, and sets it as output.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;

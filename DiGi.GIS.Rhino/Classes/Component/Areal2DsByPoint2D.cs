@@ -10,6 +10,9 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// Grasshopper component that retrieves areal 2D objects, such as buildings and administrative areas, based on a point location within a GIS model.
+    /// </summary>
     public class Areal2DsByPoint2D : VariableParameterComponent
     {
         /// <summary>
@@ -18,14 +21,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("1d64346f-8b7e-45f6-8e8f-ee3bcd765eaa");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure level of the component.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="Areal2DsByPoint2D"/> class.
         /// </summary>
         public Areal2DsByPoint2D()
           : base("GIS.Areal2DsByPoint2D", "GIS.Areal2DsByPoint2D",
@@ -77,9 +78,7 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// This is the method that actually does the work.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object is used to retrieve from inputs and store in outputs.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;

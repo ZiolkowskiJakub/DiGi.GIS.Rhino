@@ -9,6 +9,9 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// A Grasshopper component that converts coordinates from the EPSG:4326 (WGS 84) coordinate system to the EPSG:2180 (Korea Central Belt) coordinate system.
+    /// </summary>
     public class ToEPSG2180 : VariableParameterComponent
     {
         /// <summary>
@@ -17,14 +20,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("a880614a-8dc9-4b46-a8d0-547eb36228b2");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure level of the component, which determines how it is highlighted in the Grasshopper canvas.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="ToEPSG2180"/> class.
         /// </summary>
         public ToEPSG2180()
           : base("GIS.ToEPSG2180", "GIS.ToEPSG2180",
@@ -64,11 +65,9 @@ namespace DiGi.GIS.Rhino.Classes
         }
 
         /// <summary>
-        /// This is the method that actually does the work.
+        /// This is the method that actually does the work of converting a point from EPSG:4326 to EPSG:2180.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object used to retrieve input data and store output results.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;

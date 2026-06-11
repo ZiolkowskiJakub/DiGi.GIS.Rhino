@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace DiGi.GIS.Rhino.Classes
 {
+    /// <summary>
+    /// A Grasshopper component that loads a GIS model file from a specified file path.
+    /// </summary>
     public class GISModelFile : VariableParameterComponent
     {
         /// <summary>
@@ -15,14 +18,12 @@ namespace DiGi.GIS.Rhino.Classes
         public override Guid ComponentGuid => new("652f95e1-7e8b-4b02-996b-6993089630bb");
 
         /// <summary>
-        /// Provides an Icon for the component.
+        /// Gets the exposure of the component, determining how it behaves in the Grasshopper canvas.
         /// </summary>
-        //protected override System.Drawing.Bitmap Icon => Resources.DiGi_Small;
-
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         /// <summary>
-        /// Initializes a new instance of the SAM_point3D class.
+        /// Initializes a new instance of the <see cref="GISModelFile"/> class.
         /// </summary>
         public GISModelFile()
           : base("GIS.GISModelFile", "GIS.GISModelFile",
@@ -62,11 +63,9 @@ namespace DiGi.GIS.Rhino.Classes
         }
 
         /// <summary>
-        /// This is the method that actually does the work.
+        /// This is the method that actually does the work, loading the GIS model file from the provided path and outputting it.
         /// </summary>
-        /// <param name="dataAccess">
-        /// The DA object is used to retrieve from inputs and store in outputs.
-        /// </param>
+        /// <param name="dataAccess">The DA object used to retrieve input data and store output data.</param>
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
             int index;
