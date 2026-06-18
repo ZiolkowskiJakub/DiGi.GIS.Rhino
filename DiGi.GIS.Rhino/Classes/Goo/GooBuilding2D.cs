@@ -1,4 +1,4 @@
-﻿using DiGi.Geometry.Core.Interfaces;
+using DiGi.Geometry.Core.Interfaces;
 using DiGi.Geometry.Planar.Classes;
 using DiGi.Rhino.Geometry.Core.Classes;
 using Grasshopper.Kernel.Types;
@@ -28,10 +28,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        /// <summary>
-        /// Gets the geometric representations associated with the 2D building, used for baking into the Rhino document.
-        /// </summary>
-        /// <returns>An array of <see cref="IGeometry"/> objects if a valid polygonal face exists; otherwise, null.</returns>
+        /// <summary> Gets the geometric representations associated with the 2D building, used for baking into the Rhino document. </summary>
         public override IGeometry[]? Geometries
         {
             get

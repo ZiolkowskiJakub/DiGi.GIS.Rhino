@@ -1,4 +1,4 @@
-﻿using DiGi.Geometry.Core.Interfaces;
+using DiGi.Geometry.Core.Interfaces;
 using DiGi.Geometry.Planar.Classes;
 using DiGi.Rhino.Geometry.Core.Classes;
 using Grasshopper.Kernel.Types;
@@ -28,10 +28,7 @@ namespace DiGi.GIS.Rhino.Classes
         {
         }
 
-        /// <summary>
-        /// Gets the geometry associated with the wrapped Areal2D object.
-        /// </summary>
-        /// <returns>An array of <see cref="IGeometry"/> containing the polygonal face if available; otherwise, null.</returns>
+        /// <summary> Gets the geometry associated with the wrapped Areal2D object. </summary>
         public override IGeometry[]? Geometries
         {
             get
