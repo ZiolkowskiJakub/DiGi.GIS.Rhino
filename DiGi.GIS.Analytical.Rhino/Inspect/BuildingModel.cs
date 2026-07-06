@@ -1,4 +1,4 @@
-﻿using DiGi.Rhino.Core.Classes;
+using DiGi.Rhino.Core.Classes;
 using Grasshopper.Kernel.Types;
 
 namespace DiGi.GIS.Rhino
@@ -32,6 +32,7 @@ namespace DiGi.GIS.Rhino
         /// <param name="buildingModel">The building model to inspect.</param>
         /// <returns>A <see cref="GH_String"/> containing the reference GUID, or <c>null</c> if the value is not found or the building model is null.</returns>
         [Inspect("Reference", "Reference", "Reference")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1720:Identifier contains type name", Justification = "Name matches the property being inspected.")]
         public static GH_String? Guid(this DiGi.Analytical.Building.Classes.BuildingModel buildingModel)
         {
             if (buildingModel == null)

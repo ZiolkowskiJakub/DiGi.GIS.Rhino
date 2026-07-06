@@ -1,4 +1,4 @@
-﻿using DiGi.GIS.Classes;
+using DiGi.GIS.Classes;
 using DiGi.GIS.Rhino.Classes;
 using DiGi.Rhino.Core.Classes;
 using Grasshopper.Kernel.Types;
@@ -14,6 +14,7 @@ namespace DiGi.GIS.Rhino
         /// <param name="gISModel">The GIS model to inspect.</param>
         /// <returns>The GH_Guid representing the model's identity, or null if the model is null.</returns>
         [Inspect("Guid", "Guid", "Guid")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1720:Identifier contains type name", Justification = "Name matches the property being inspected.")]
         public static GH_Guid? Guid(this GIS.Classes.GISModel? gISModel)
         {
             if (gISModel == null)

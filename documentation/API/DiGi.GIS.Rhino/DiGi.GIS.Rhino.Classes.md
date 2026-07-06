@@ -87,13 +87,13 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work of retrieving buildings related to the provided administrative area\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.AdministrativeAreal2DBuilding2Ds.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.AdministrativeAreal2DBuilding2Ds.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve data from inputs and store results in outputs\.
 
@@ -181,13 +181,13 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.Areal2DsByPoint2D.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.Areal2DsByPoint2D.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object is used to retrieve from inputs and store in outputs\.
 
@@ -276,13 +276,13 @@ This is the method that actually does the work\. It retrieves the GIS model and 
 calculates the related geometry result, and sets it as output\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.Building2DGeometryCalculationResult.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.Building2DGeometryCalculationResult.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve from inputs and store in outputs\.
 
@@ -407,13 +407,13 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.GISModel.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.GISModel.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve from inputs and store in outputs\.
 
@@ -501,13 +501,13 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work, loading the GIS model file from the provided path and outputting it\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.GISModelFile.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.GISModelFile.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve input data and store output data\.
 
@@ -974,27 +974,27 @@ The object to cast from\.
 [System\.Boolean](https://learn.microsoft.com/en-us/dotnet/api/system.boolean 'System\.Boolean')  
 `true` if the casting was successful; otherwise, `false`\.
 
-<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_Y_(Y)'></a>
+<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_T_(T)'></a>
 
-## GooGISModel\.CastTo\<Y\>\(Y\) Method
+## GooGISModel\.CastTo\<T\>\(T\) Method
 
 Attempts to cast the wrapped value into a specified type\.
 
 ```csharp
-public override bool CastTo<Y>(ref Y target);
+public override bool CastTo<T>(ref T target);
 ```
 #### Type parameters
 
-<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_Y_(Y).Y'></a>
+<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_T_(T).T'></a>
 
-`Y`
+`T`
 
 The target type for casting\.
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_Y_(Y).target'></a>
+<a name='DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_T_(T).target'></a>
 
-`target` [Y](DiGi.GIS.Rhino.Classes.md#DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_Y_(Y).Y 'DiGi\.GIS\.Rhino\.Classes\.GooGISModel\.CastTo\<Y\>\(Y\)\.Y')
+`target` [T](DiGi.GIS.Rhino.Classes.md#DiGi.GIS.Rhino.Classes.GooGISModel.CastTo_T_(T).T 'DiGi\.GIS\.Rhino\.Classes\.GooGISModel\.CastTo\<T\>\(T\)\.T')
 
 A reference to the target variable where the result will be stored\.
 
@@ -1320,13 +1320,13 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work of converting a point from EPSG:4326 to EPSG:2180\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.ToEPSG2180.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.ToEPSG2180.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve input data and store output results\.
 
@@ -1414,12 +1414,12 @@ protected override DiGi.Rhino.Core.Classes.Param[] Outputs { protected get; }
 This is the method that actually does the work of converting a point from EPSG 2180 to EPSG 4326\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.ToEPSG4326.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.ToEPSG4326.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve input data and store output results\.

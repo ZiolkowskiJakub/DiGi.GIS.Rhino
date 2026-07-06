@@ -1,4 +1,4 @@
-﻿using DiGi.GIS.Classes;
+using DiGi.GIS.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using Grasshopper.Kernel;
@@ -67,14 +67,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// This is the method that actually does the work. It retrieves the GIS model and building, 
         /// calculates the related geometry result, and sets it as output.
         /// </summary>
-        /// <param name="dataAccess">The DA object used to retrieve from inputs and store in outputs.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object used to retrieve from inputs and store in outputs.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("GISModel");
             GIS.Classes.GISModel? gISModel = null;
-            if (index == -1 || !dataAccess.GetData(index, ref gISModel) || gISModel == null)
+            if (index == -1 || !DA.GetData(index, ref gISModel) || gISModel == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -82,7 +82,7 @@ namespace DiGi.GIS.Rhino.Classes
 
             index = Params.IndexOfInputParam("Building2D");
             Building2D? building2D = null;
-            if (index == -1 || !dataAccess.GetData(index, ref building2D) || building2D == null)
+            if (index == -1 || !DA.GetData(index, ref building2D) || building2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -93,7 +93,7 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("Building2DGeometryCalculationResult");
             if (index != -1)
             {
-                dataAccess.SetData(index, new GooBuilding2DGeometryCalculationResult(building2DGeometryCalculationResult));
+                DA.SetData(index, new GooBuilding2DGeometryCalculationResult(building2DGeometryCalculationResult));
             }
         }
     }

@@ -89,12 +89,12 @@ This is the method that actually does the work\. It retrieves the GIS model file
 optional building 2D data to generate a list of analytical building models\.
 
 ```csharp
-protected override void SolveInstance(IGH_DataAccess dataAccess);
+protected override void SolveInstance(IGH_DataAccess DA);
 ```
 #### Parameters
 
-<a name='DiGi.GIS.Rhino.Classes.BuildingModels.SolveInstance(IGH_DataAccess).dataAccess'></a>
+<a name='DiGi.GIS.Rhino.Classes.BuildingModels.SolveInstance(IGH_DataAccess).DA'></a>
 
-`dataAccess` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
+`DA` [Grasshopper\.Kernel\.IGH\_DataAccess](https://learn.microsoft.com/en-us/dotnet/api/grasshopper.kernel.igh_dataaccess 'Grasshopper\.Kernel\.IGH\_DataAccess')
 
 The DA object used to retrieve from inputs and store in outputs\.

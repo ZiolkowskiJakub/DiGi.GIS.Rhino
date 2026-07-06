@@ -1,4 +1,4 @@
-﻿using DiGi.Geometry.Planar.Classes;
+using DiGi.Geometry.Planar.Classes;
 using DiGi.GIS.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
@@ -78,14 +78,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// This is the method that actually does the work.
         /// </summary>
-        /// <param name="dataAccess">The DA object is used to retrieve from inputs and store in outputs.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object is used to retrieve from inputs and store in outputs.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("GISModel");
             GIS.Classes.GISModel? gISModel = null;
-            if (index == -1 || !dataAccess.GetData(index, ref gISModel) || gISModel == null)
+            if (index == -1 || !DA.GetData(index, ref gISModel) || gISModel == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -93,7 +93,7 @@ namespace DiGi.GIS.Rhino.Classes
 
             index = Params.IndexOfInputParam("Point2D");
             Point2D? point2D = null;
-            if (index == -1 || !dataAccess.GetData(index, ref point2D) || point2D == null)
+            if (index == -1 || !DA.GetData(index, ref point2D) || point2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -103,14 +103,14 @@ namespace DiGi.GIS.Rhino.Classes
             double tolerance = Core.Constants.Tolerance.Distance;
             if (index != -1)
             {
-                dataAccess.GetData(index, ref tolerance);
+                DA.GetData(index, ref tolerance);
             }
 
             index = Params.IndexOfInputParam("Distance");
             double distance = 0;
             if (index != -1)
             {
-                dataAccess.GetData(index, ref distance);
+                DA.GetData(index, ref distance);
             }
 
             List<Building2D>? building2Ds = Query.Building2Ds(gISModel, point2D, out List<AdministrativeAreal2D>? administrativeAreal2Ds, distance, tolerance);
@@ -118,13 +118,13 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("Building2Ds");
             if (index != -1)
             {
-                dataAccess.SetDataList(index, building2Ds?.ConvertAll(x => new GooBuilding2D(x)));
+                DA.SetDataList(index, building2Ds?.ConvertAll(x => new GooBuilding2D(x)));
             }
 
             index = Params.IndexOfOutputParam("AdministrativeAreal2Ds");
             if (index != -1)
             {
-                dataAccess.SetDataList(index, administrativeAreal2Ds?.ConvertAll(x => new GooAdministrativeAreal2D(x)));
+                DA.SetDataList(index, administrativeAreal2Ds?.ConvertAll(x => new GooAdministrativeAreal2D(x)));
             }
         }
     }

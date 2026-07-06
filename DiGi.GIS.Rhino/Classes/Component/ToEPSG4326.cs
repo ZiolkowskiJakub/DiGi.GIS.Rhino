@@ -1,4 +1,4 @@
-﻿using DiGi.Geometry.Planar.Classes;
+using DiGi.Geometry.Planar.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using DiGi.Rhino.Geometry.Planar.Classes;
@@ -67,14 +67,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// This is the method that actually does the work of converting a point from EPSG 2180 to EPSG 4326.
         /// </summary>
-        /// <param name="dataAccess">The DA object used to retrieve input data and store output results.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object used to retrieve input data and store output results.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("Point2D");
             Point2D? point2D = null;
-            if (index == -1 || !dataAccess.GetData(index, ref point2D) || point2D == null)
+            if (index == -1 || !DA.GetData(index, ref point2D) || point2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -85,7 +85,7 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("Point3D");
             if (index != -1)
             {
-                dataAccess.SetData(index, point3D);
+                DA.SetData(index, point3D);
             }
         }
     }

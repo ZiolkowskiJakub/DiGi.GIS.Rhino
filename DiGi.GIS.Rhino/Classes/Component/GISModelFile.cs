@@ -1,4 +1,4 @@
-﻿using DiGi.Core.Classes;
+using DiGi.Core.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using Grasshopper.Kernel;
@@ -65,14 +65,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// This is the method that actually does the work, loading the GIS model file from the provided path and outputting it.
         /// </summary>
-        /// <param name="dataAccess">The DA object used to retrieve input data and store output data.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object used to retrieve input data and store output data.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("Path");
             string? path = null;
-            if (index == -1 || !dataAccess.GetData(index, ref path) || path == null)
+            if (index == -1 || !DA.GetData(index, ref path) || path == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -91,7 +91,7 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("GISModelFile");
             if (index != -1)
             {
-                dataAccess.SetData(index, gISModelFile);
+                DA.SetData(index, gISModelFile);
             }
         }
     }

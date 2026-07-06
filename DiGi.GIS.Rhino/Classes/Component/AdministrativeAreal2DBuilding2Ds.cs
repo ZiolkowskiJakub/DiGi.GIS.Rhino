@@ -1,4 +1,4 @@
-﻿using DiGi.GIS.Classes;
+using DiGi.GIS.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Core.Enums;
 using Grasshopper.Kernel;
@@ -66,14 +66,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// This is the method that actually does the work of retrieving buildings related to the provided administrative area.
         /// </summary>
-        /// <param name="dataAccess">The DA object used to retrieve data from inputs and store results in outputs.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object used to retrieve data from inputs and store results in outputs.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("GISModel");
             GIS.Classes.GISModel? gISModel = null;
-            if (index == -1 || !dataAccess.GetData(index, ref gISModel) || gISModel == null)
+            if (index == -1 || !DA.GetData(index, ref gISModel) || gISModel == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -81,7 +81,7 @@ namespace DiGi.GIS.Rhino.Classes
 
             index = Params.IndexOfInputParam("AdministrativeAreal2D");
             AdministrativeAreal2D? administrativeAreal2D = null;
-            if (index == -1 || !dataAccess.GetData(index, ref administrativeAreal2D) || administrativeAreal2D == null)
+            if (index == -1 || !DA.GetData(index, ref administrativeAreal2D) || administrativeAreal2D == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -95,7 +95,7 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("Building2Ds");
             if (index != -1)
             {
-                dataAccess.SetDataList(index, building2Ds?.ConvertAll(x => new GooBuilding2D(x)));
+                DA.SetDataList(index, building2Ds?.ConvertAll(x => new GooBuilding2D(x)));
             }
         }
     }

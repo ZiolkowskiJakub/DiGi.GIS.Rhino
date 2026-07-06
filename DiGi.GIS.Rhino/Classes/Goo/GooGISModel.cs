@@ -1,4 +1,4 @@
-﻿using DiGi.Rhino.Core.Classes;
+using DiGi.Rhino.Core.Classes;
 using Grasshopper.Kernel.Types;
 using System;
 
@@ -74,20 +74,20 @@ namespace DiGi.GIS.Rhino.Classes
         /// <summary>
         /// Attempts to cast the wrapped value into a specified type.
         /// </summary>
-        /// <typeparam name="Y">The target type for casting.</typeparam>
+        /// <typeparam name="T">The target type for casting.</typeparam>
         /// <param name="target">A reference to the target variable where the result will be stored.</param>
         /// <returns><c>true</c> if the casting was successful; otherwise, <c>false</c>.</returns>
-        public override bool CastTo<Y>(ref Y target)
+        public override bool CastTo<T>(ref T target)
         {
-            if (typeof(Y) == typeof(GIS.Classes.GISModel))
+            if (typeof(T) == typeof(GIS.Classes.GISModel))
             {
-                target = (Y)(object)Value!;
+                target = (T)(object)Value!;
                 return true;
             }
 
-            if (typeof(Y) == typeof(object))
+            if (typeof(T) == typeof(object))
             {
-                target = (Y)(object)Value!;
+                target = (T)(object)Value!;
                 return true;
             }
 

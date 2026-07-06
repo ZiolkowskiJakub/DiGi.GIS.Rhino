@@ -1,4 +1,4 @@
-﻿using DiGi.GIS.Classes;
+using DiGi.GIS.Classes;
 using DiGi.Rhino.Core.Classes;
 using DiGi.Rhino.Geometry.Planar.Classes;
 using Grasshopper.Kernel.Types;
@@ -13,6 +13,7 @@ namespace DiGi.GIS.Rhino
         /// <param name="areal2D">The areal 2D object to inspect.</param>
         /// <returns>A <see cref="GH_Guid"/> containing the GUID of the object, or <c>null</c> if the input is null.</returns>
         [Inspect("Guid", "Guid", "Guid")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1720:Identifier contains type name", Justification = "Name matches the property being inspected.")]
         public static GH_Guid? Guid(this Areal2D? areal2D)
         {
             if (areal2D == null)

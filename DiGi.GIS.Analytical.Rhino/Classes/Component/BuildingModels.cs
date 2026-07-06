@@ -1,4 +1,4 @@
-﻿using DiGi.Analytical.Building.Classes;
+using DiGi.Analytical.Building.Classes;
 using DiGi.Analytical.Building.Rhino.Classes;
 using DiGi.Core;
 using DiGi.GIS.Classes;
@@ -71,14 +71,14 @@ namespace DiGi.GIS.Rhino.Classes
         /// This is the method that actually does the work. It retrieves the GIS model file and 
         /// optional building 2D data to generate a list of analytical building models.
         /// </summary>
-        /// <param name="dataAccess">The DA object used to retrieve from inputs and store in outputs.</param>
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
+        /// <param name="DA">The DA object used to retrieve from inputs and store in outputs.</param>
+        protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index;
 
             index = Params.IndexOfInputParam("GISModelFile");
             GIS.Classes.GISModelFile? gISModelFile = null;
-            if (index == -1 || !dataAccess.GetData(index, ref gISModelFile) || gISModelFile == null)
+            if (index == -1 || !DA.GetData(index, ref gISModelFile) || gISModelFile == null)
             {
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "Invalid data");
                 return;
@@ -89,7 +89,7 @@ namespace DiGi.GIS.Rhino.Classes
             if (index != -1)
             {
                 building2Ds = [];
-                if (!dataAccess.GetDataList(index, building2Ds))
+                if (!DA.GetDataList(index, building2Ds))
                 {
                     building2Ds = null;
                 }
@@ -115,7 +115,7 @@ namespace DiGi.GIS.Rhino.Classes
             index = Params.IndexOfOutputParam("BuildingModels");
             if (index != -1)
             {
-                dataAccess.SetDataList(index, buildingModels?.ConvertAll(x => new GooBuildingModel(x)));
+                DA.SetDataList(index, buildingModels?.ConvertAll(x => new GooBuildingModel(x)));
             }
         }
     }
